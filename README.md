@@ -10,7 +10,7 @@ This is a Python/Flask service which provides an API to get a forecast for a
 given city.
 
 The service requires an API key from [openweathermap](https://www.openweathermap.org)
-(free registration required). This API's backend uses the Open Weather API
+(free registration required). This API"s backend uses the Open Weather API
 endpoint https://openweathermap.org/forecast5.
 
 
@@ -77,20 +77,16 @@ When no data is found for the date and time given the API will respond with:
 
 # New Features Required
 
-- The current implementation uses dummy data, you must contact the
-  openweathermap service to retrieve real data
+- What is your testing approach? (We prefer pytest)?
+- Get the implementation using dummy data working.
+- Convert to using the openweathermap service to retrieve real data.
 - I want the temperature in Fahrenheit, Kelvin or Celcius. Implement a way to
   return the temperature in the desired units.
+- Create a docker container which can be configured with the API key.
+- Run the docker container and verify the API.
 - Please restrict API access so it can be revoked at a later stage. If the
   environment variable NO_AUTH_FOR_TEST=1 is set it should disable
   authorisation to aid automated verification of the existing API.
 - Return some appropriate data when requesting a time between two times that
   the https://openweathermap.org/forecast5 data set supports.
 - Return appropriate HTTP status codes from the API
-- Tests (prefer pytest framework)
-
-
-# Bonus Features (Optional)
-
-- A docker container which can be configured with the API key.
-- A running service hosted by a cloud provider.
