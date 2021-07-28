@@ -75,10 +75,10 @@ When no data is found for the date and time given the API will respond with:
     }
 
 
-# New Features Required
+# Pair-programming tasks
 
 - What is your testing approach? (We prefer pytest)?
-- Get the implementation using dummy data working.
+- Get the implementation working using the dummy data .
 - Convert to using the openweathermap service to retrieve real data.
 - I want the temperature in Fahrenheit, Kelvin or Celcius. Implement a way to
   return the temperature in the desired units.
