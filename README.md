@@ -20,6 +20,13 @@ The implementation of this service has some problems that need to be fixed
 before it will run. Once the project has been set up you should be able to run
 the service by calling:
 
+    # Set up the package to run in development mode:
+    python setup.py develop
+
+    # Running any test you might choose to do:
+    pytest -sv
+
+    # Running the webapp locally:
     FLASK_APP=app.py flask run
 
 
@@ -44,9 +51,9 @@ The weather endpoint has the form:
 
     curl http://localhost:5000/london/20171005/2200/
     {
-      "description"="broken clouds"
-        "humidity": "66%"
-        "pressure": 1027.51
+        "description": "broken clouds",
+        "humidity": "66%",
+        "pressure": 1027.51,
         "temperature": "285.25
     }
 
