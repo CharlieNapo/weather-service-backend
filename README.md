@@ -54,7 +54,7 @@ The weather endpoint has the form:
         "description": "broken clouds",
         "humidity": "66%",
         "pressure": 1027.51,
-        "temperature": "285.25
+        "temperature": "285.25"
     }
 
 The service also supports recovering just the fields: description, humidity,
@@ -69,7 +69,7 @@ pressure & temperature:
 
     curl http://localhost:5000/london/20171005/2200/temperature/
     {
-      "temperature": "285.25C"
+      "temperature": "285.25"
     }
 
 
