@@ -93,7 +93,7 @@ When no data is found for the date and time given the API will respond with:
 
 # Questions for interview
 
-Please prepare answer for these questions in advance of the interview.
+Please prepare answers for these questions in advance of the interview.
 
 - What would you approach to returning data be if a request is made between two times that the https://openweathermap.org/forecast5 data set supports.
 - How will you scale the weather service to handle increasing load.
