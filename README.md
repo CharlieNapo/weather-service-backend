@@ -85,15 +85,25 @@ When no data is found for the date and time given the API will respond with:
 # Pair-programming tasks
 
 - What is your testing approach? (We prefer pytest)?
-- Get the implementation working using the dummy data .
+- Get the implementation working using the dummy data.
+- Implement a way to return the temperature in Fahrenheit, Kelvin or Celcius.
 - Convert to using the openweathermap service to retrieve real data.
-- I want the temperature in Fahrenheit, Kelvin or Celcius. Implement a way to
-  return the temperature in the desired units.
 - Create a docker container which can be configured with the API key.
 - Run the docker container and verify the API.
-- Please restrict API access so it can be revoked at a later stage. If the
-  environment variable NO_AUTH_FOR_TEST=1 is set it should disable
-  authorisation to aid automated verification of the existing API.
-- Return some appropriate data when requesting a time between two times that
-  the https://openweathermap.org/forecast5 data set supports.
-- Return appropriate HTTP status codes from the API
+
+# Questions for interview
+
+Please prepare answers for these questions in advance of the interview.
+
+- What would you approach to returning data be if a request is made between two times that the https://openweathermap.org/forecast5 data set supports.
+- How will you scale the weather service to handle increasing load.
+  - For example, scaling the systems to 1k Requests Per Minute (RPM) and then 5k RPM.
+- Where do you think the bottlenecks lie in scaling such a system?
+- How do you ensure that the API response time is always within tolerable range?
+- What if any data storage would you use as the backend for the weather service?
+  - If you had a storage backend, how would it scale?
+
+Optional question:
+
+- How might we minimise the use of the system resources (cloud hosting costs)?
+  - The system should still be able to scale as needed.
