@@ -97,6 +97,8 @@ Please prepare answers for these questions in advance of the interview.
 
 - What would you approach to returning data be if a request is made between two times that the https://openweathermap.org/forecast5 data set supports.
 - How will you scale the weather service to handle increasing load.
-- How would you measure the weather service response handling?
+  - For example, scaling the systems to 1k RPM and then 5k RPM.
+- Where do you think the bottlenecks lie in scaling such a system?
+- How do you ensure that the API response time is always within tolerable range?
 - What if any data storage would you use as the backend for the weather service?
-- If you had a storage backend, how would it scale?
+  - If you had a storage backend, how would it scale?
