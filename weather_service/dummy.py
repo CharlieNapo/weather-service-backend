@@ -1,3 +1,4 @@
+# This dummy weather data for London in October 2017.
 response = [{
     "clouds": {
         "all": 68

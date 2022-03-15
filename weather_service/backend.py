@@ -3,12 +3,11 @@ import logging
 
 from weather_service import dummy
 from datetime import datetime
-from flask import jsonify
 
 
 def parse_datetime(date, hour):
-    """Convert the date and hour to datetime."""
-    return datetime.strptime("{}-{}".format(date, hour), '%Y%M%D%h%m')
+    """Convert the date and hour to datetime.
+    """
 
 
 def fetch_forecast_data(city):
@@ -47,4 +46,4 @@ def get_forecast(city, date, hour, field=None):
     date_time = parse_datetime(date, hour)
     forecast = find_forecast(forecasts, date_time)
 
-    return jsonify(forecast)
+    return forecast
