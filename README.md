@@ -36,9 +36,13 @@ When the app is running you can do the dollowing curl request:
 
 # Pair-programming tasks
 
+In the first 30 minutes you are expected to implement:
 - Implement the get forecast endpoint.
 - Build and run the API inside a docker container.
-- Discuss interview questions.
+
+In the final 15 minutes of the interview:
+- Discuss the interview questions.
+
 
 ## Get forecast endpoint behaviour
 
