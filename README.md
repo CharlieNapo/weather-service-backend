@@ -1,42 +1,30 @@
 # weather service
 
-This is the test for backend developers. The test for frontend developers is [here](https://github.com/SuperCarers/weather-service-frontend)
+This is the test for backend developers.
 
 Please do not push your solution to a publicly available repo.
 
 # Introduction
 
-This is a Python/Flask service which provides an API to get a forecast for a
-given city.
+This is a Python/Flask API to get a forecast for London during Oct 2017.
 
-The service requires an API key from [openweathermap](https://www.openweathermap.org)
-(free registration required). This API"s backend uses the Open Weather API
-endpoint https://openweathermap.org/forecast5.
+# Environment set up
 
-
-# Getting it running
-
-The implementation of this service has some problems that need to be fixed
-before it will run. Once the project has been set up you should be able to run
-the service by calling:
+Checkout the code and set up the service ready for development as follows:
 
     # Set up the package to run in development mode:
     python setup.py develop
 
-    # Running any test you might choose to do:
+    # Running the webapp locally reloading when changes are made:
+    FLASK_APP=app.py FLASK_ENV=development flask run
+
+    # Optional: Running any test you might choose to write:
     pytest -sv
 
-    # Running the webapp locally:
-    FLASK_APP=app.py flask run
 
+# Check the service is running after set up
 
-# Existing API
-
-I would like to make the following calls against this web service using "curl".
-The submitted result will be put through automated testing to verify the API
-is working.
-
-When the service is running it can be checked using the ping endpoint:
+When the app is running you can do the dollowing curl request:
 
     curl http://localhost:5000/ping
     {
@@ -45,57 +33,44 @@ When the service is running it can be checked using the ping endpoint:
       "version": "1.0.0"
     }
 
-The weather endpoint has the form:
+
+# Pair-programming tasks
+
+- Implement the get forecast endpoint.
+- Build and run the API inside a docker container.
+- Discuss interview questions.
+
+## Get forecast endpoint behaviour
+
+The task is to implement the get_forecast() inside backend.py, returing data to
+implement the following GET requests
+
+### A GET request for a known date and time
 
     curl http://<host:ip>/<city>/<date>/<hour minute>/
 
-    curl http://localhost:5000/london/20171005/2200/
+    curl http://localhost:5000/london/20171018/1500/
     {
-        "description": "broken clouds",
-        "humidity": "66%",
-        "pressure": 1027.51,
-        "temperature": "285.25"
+        "description": "light rain",
+        "humidity": "100%",
+        "pressure": 1015.55,
+        "temperature": 290.44
     }
 
-The service also supports recovering just the fields: description, humidity,
-pressure & temperature:
+### A GET request for an unknown date and time
 
-    curl http://<host:ip>/<city>/<date>/<hour minute>/<field>/
-
-    curl http://localhost:5000/london/20171005/2200/humidity/
-    {
-      "humidity": "66%"
-    }
-
-    curl http://localhost:5000/london/20171005/2200/temperature/
-    {
-      "temperature": "285.25"
-    }
-
-
-When no data is found for the date and time given the API will respond with:
-
-    curl http://localhost:5000/london/21171005/2200/temperature
+    curl http://localhost:5000/london/21171005/2200/
     {
       "message": "No data for 2117-10-05 22:00",
       "status": "error"
     }
 
 
-# Pair-programming tasks
-
-- What is your testing approach? (We prefer pytest)?
-- Get the implementation working using the dummy data.
-- Implement a way to return the temperature in Fahrenheit, Kelvin or Celcius.
-- Convert to using the openweathermap service to retrieve real data.
-- Create a docker container which can be configured with the API key.
-- Run the docker container and verify the API.
-
-# Questions for interview
+## Questions for interview
 
 Please prepare answers for these questions in advance of the interview.
 
-- What would you approach to returning data be if a request is made between two times that the https://openweathermap.org/forecast5 data set supports.
+- How would you return data for a request between two data points in the dummy data.
 - How will you scale the weather service to handle increasing load.
   - For example, scaling the systems to 1k Requests Per Minute (RPM) and then 5k RPM.
 - Where do you think the bottlenecks lie in scaling such a system?

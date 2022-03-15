@@ -36,4 +36,4 @@ def ping():
 def get_complete_forecast(city, date, hour):
     """Recover the complete dataset returned or handle no data found.
     """
-    return backend.get_forecast(city, date, hour)
+    return jsonify(backend.get_forecast(city, date, hour))
