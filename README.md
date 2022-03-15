@@ -24,7 +24,7 @@ Checkout the code and set up the service ready for development as follows:
 
 # Check the service is running after set up
 
-When the app is running you can do the dollowing curl request:
+When the app is running you can do the following curl request:
 
     curl http://localhost:5000/ping
     {
@@ -36,9 +36,10 @@ When the app is running you can do the dollowing curl request:
 
 # Pair-programming tasks
 
-In the first 30 minutes you are expected to implement:
+In the first 30 minutes you are expected to complete the following tasks:
 - Implement the get forecast endpoint.
-- Build and run the API inside a docker container.
+- Build and run the flask application inside a docker container and verify the
+  endpoint is working as expected, using a curl request
 
 In the final 15 minutes of the interview:
 - Discuss the interview questions.
